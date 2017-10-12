@@ -127,3 +127,104 @@
 
 ## Lesson 2: Software Process
 
+- process: framework of required tasks (e.g. waterfall, XP)
+- methods: technical "how to" (e.g. design review, code review, testing)
+- tools: automate processes and methods
+- waterfall process phases:
+  - 1)  gather requirements
+    - write down what you have to do
+    - talk to clients, users, customers - but they might not know what they need
+    - purpose: build the right thing, gather information for planning
+  - 2)  specification
+    - **written document** that says *what* the system does in all circumstances, for all inputs, in each state
+    - more comprehensive than requirements
+  - 3)  design
+    - system architecture
+    - decompose system into modules; specify interfaces between modules
+    - about *how* more than *what*
+  - 4)  implementation
+    - make a plan for order of build (by priority or testability) 
+    - code and test each module
+  - 5)  integration
+    - put pieces together
+    - QA makes sure to test full system
+  - 6)  product
+    - ship, start maintenance
+- waterfall model outline:
+  - a standard model where each stage leads to the next
+  - test after each phase - verify requirements, spec, design, **not just code**
+  - top-down design, bottom-up implementation
+- waterfall model risks:
+  - need to start with good requirements
+  - little feedback until late 
+  - problems in spec may be found very late
+  - long time before first working versions seen (intermediate builds in general are good for confidence)
+  - programmers have nothing to do until design is done
+- professor's waterfall opinions:
+  - waterfall adopted from other kinds of engineering
+  - little software actually made this way
+  - good: emphasis on spec, design, testing, communication through documents
+- time is enemy of software:
+  - tech becomes obsolete
+  - competitors crop up
+  - 3rd party pieces change
+  - taking a long time to see product is therefore risky
+- CA DMV software '87 - '93 was supposed to be \$8M, but became \$50M and never finished
+- advantages of speed:
+  - world won't change much
+  - only near-term planning necessary
+- rapid prototyping is an option because waterfall isn't fast
+  - write a quick prototype
+  - show it to users, refine requirements
+  - proceed in waterfall (throw away prototype)
+- prof's comments on rapid prototypes:
+  - hard to get rid of prototype
+  - prototype useful for refining requirements
+  - exposes design mistakes
+  - improves accuracy of plans
+- prof's comments on reality:
+  - neither model is accurate
+  - actually feedback between all stages (design, spec, requirements can change)
+- how to succeed with waterfall:
+  - accept that later events will change early decisions, plan for change
+  - minimize risk by identifying likely revisions, get fast feedback
+- iterative models:
+  - use same stages as waterfall, but iterate through full cycle several times
+  - break project into build which lead from prototype to finished product
+  - **gather requirements:** same as before, but without product, likely can't get full picture of requirements
+  - **specification:** same as before, but recognize that it will evolve
+  - **design:** 
+    - same as before, but recognize where change happens and put abstraction there
+    - incremental progress from skeletal component to full functionality
+    - from most critical to least critical
+  - **implementation (build 1):**
+    - get skeleton working
+    - all pieces there, none doing very much; all interfaces implemented
+    - allows development of individual components to rely on interfaces only
+  - **implementation (subsequent builds):**
+    - after build 1, always have a demo to show to customer, team; bolsters communication
+    - each build adds functionality
+  - **integration:** 
+    - major testing on each build - it's a stabilization point
+    - happens until last build
+  - advantages:
+    - find problems from feedback to get idea of spec/design
+    - more quantifiable than waterfall
+  - disadvantages:
+    - major mistakes in requirement, spec, design can happen b/c not as much time before build 1
+    - can begin coding before problem fully understood
+- in general, better to have product with feedback than to study problem in abstract
+- in practice:
+  - most SW dev uses iterative models (daily builds, system always working)
+  - many hard-to-test systems still use waterfall (e.g. unmanned space probes)
+- conclusions:
+  - important to follow process
+  - waterfall:
+    - top-down design, bottom-up implementation
+    - lots of upfront thinking, slow, tough to iterate
+  - iterative:
+    - build prototype quickly
+    - postpone thinking
+
+## Lecture 3: Extreme Programming
+
