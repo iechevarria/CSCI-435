@@ -122,15 +122,23 @@
 - other issues:
 
   - specs change
+
   - you can be wrong about what you want
+
   - the world changes
+
+    ​
 
 ## Lesson 2: Software Process
 
 - process: framework of required tasks (e.g. waterfall, XP)
+
 - methods: technical "how to" (e.g. design review, code review, testing)
+
 - tools: automate processes and methods
+
 - waterfall process phases:
+
   - 1)  gather requirements
     - write down what you have to do
     - talk to clients, users, customers - but they might not know what they need
@@ -150,45 +158,66 @@
     - QA makes sure to test full system
   - 6)  product
     - ship, start maintenance
+
 - waterfall model outline:
+
   - a standard model where each stage leads to the next
   - test after each phase - verify requirements, spec, design, **not just code**
   - top-down design, bottom-up implementation
+
 - waterfall model risks:
+
   - need to start with good requirements
   - little feedback until late 
   - problems in spec may be found very late
   - long time before first working versions seen (intermediate builds in general are good for confidence)
   - programmers have nothing to do until design is done
+
 - professor's waterfall opinions:
+
   - waterfall adopted from other kinds of engineering
   - little software actually made this way
   - good: emphasis on spec, design, testing, communication through documents
+
 - time is enemy of software:
+
   - tech becomes obsolete
   - competitors crop up
   - 3rd party pieces change
   - taking a long time to see product is therefore risky
+
 - CA DMV software '87 - '93 was supposed to be \$8M, but became \$50M and never finished
+
 - advantages of speed:
+
   - world won't change much
   - only near-term planning necessary
+
 - rapid prototyping is an option because waterfall isn't fast
+
   - write a quick prototype
   - show it to users, refine requirements
   - proceed in waterfall (throw away prototype)
+
 - prof's comments on rapid prototypes:
+
   - hard to get rid of prototype
   - prototype useful for refining requirements
   - exposes design mistakes
   - improves accuracy of plans
+
 - prof's comments on reality:
+
   - neither model is accurate
   - actually feedback between all stages (design, spec, requirements can change)
+
 - how to succeed with waterfall:
+
   - accept that later events will change early decisions, plan for change
   - minimize risk by identifying likely revisions, get fast feedback
+
 - iterative models:
+
   - use same stages as waterfall, but iterate through full cycle several times
   - break project into build which lead from prototype to finished product
   - **gather requirements:** same as before, but without product, likely can't get full picture of requirements
@@ -213,18 +242,154 @@
   - disadvantages:
     - major mistakes in requirement, spec, design can happen b/c not as much time before build 1
     - can begin coding before problem fully understood
+
 - in general, better to have product with feedback than to study problem in abstract
+
 - in practice:
+
   - most SW dev uses iterative models (daily builds, system always working)
   - many hard-to-test systems still use waterfall (e.g. unmanned space probes)
+
 - conclusions:
+
   - important to follow process
+
   - waterfall:
+
     - top-down design, bottom-up implementation
     - lots of upfront thinking, slow, tough to iterate
+
   - iterative:
+
     - build prototype quickly
+
     - postpone thinking
+
+      ​
 
 ## Lecture 3: Extreme Programming
 
+- SE is not civil engineering - SW is more organic, can expand 
+- extreme programming (XP) addresses this
+- goals:
+  - minimize unnecessary work
+  - maximize communication + feedback
+  - make sure devs do most important work
+  - make system flexible, ready to meet requirements
+- history: Kent Beck wrote 1999 book "Extreme Programming Explained"
+- **XP practices:** on-site customer, metaphor, planning, pair programming, small releases, testing, collective ownership, testing, CI, simple design, 40-hour week, refactoring, code standards
+- **XP processes** (multiple short cycles, 2 weeks):
+  1. meet with client to get requirements (user stories, acceptance tests)
+  2. planning game (break stories to tasks, estimate costs); client prioritizes stories
+  3. implementation - tests first, simplest design to pass tests, code in pairs, occasional refactoring
+  4. evaluate progress, reiterate
+- XP like iterative but taken to extreme
+- XP customer:
+  - expert customer part of team (onsite, always available)
+  - customer involved in requirements, what to do next, acceptance tests (writes them), evaluates versions
+  - this ideal may not always be feasible
+- **user stories**
+  - write on index cards or wiki; have meaningful title, are short
+  - focus on "what" not "why" or "how" 
+  - use client language (so client know what's happening)
+  - not all stories needed in first iteration
+  - **example:** CEO says "I need accounting SW where  I can make an account, list accounts, query account balance, delete account"; good user stories follow:
+    - create account - I can create a named account
+    - query account balance - I can query account balance
+    - list accounts - I can get an *alphabetical* list of all accounts
+    - delete account - I can delete a named account *if the balance is zero*****
+  - **example:** not a user story - The user interface will use AJAX tech for online experience - because it's about the *how* and *why* not the *what*
+  - customer must describe how user stories will be tested; tests can be for one or more stories
+  - **example:** 
+    1. if I make account "savings" and another "checking", and I ask for account list, I get "checking", "savings"
+    2. if I create "checking" again, I get an error
+    3. if I query balance of "checking", I get 0
+    4. if I delete "stocks", I get an error
+    5. if I delete "checking" it should not appear in list 
+  - customer should write and be able to rerun tests
+- **tasks**
+  - every story broken into tasks to split work
+  - stories are customer-focused, tasks are dev-focused
+  - **example:** story is "I can create named accounts"; tasks are:
+    - "ask user the name of the account"
+    - "check if account exists"
+    - "create empty account"
+  - break down only enough to estimate costs; validate tasks with customer
+  - if story has too many tasks, break it down
+  - team assigns costs to tasks - relative cost is what matters, so use abstract units
+  - experience will dictate what a unit is; devs can bid units to determine value
+- **planning game**
+  - customer chooses important stories for next release; devs bid on tasks
+  - pick completion date, pick stories until budget full
+  - customer may need to reprioritize
+- **test-driven development** (TDD)
+  - write unit tests (tests on one module) before implementing; check for good and bad behavior
+  - TDD **clarifies** task, forces **simplicity**, acts as **documentation** (shows dev intent), increases **confidence**
+  - if failing acceptance test, add user test and fix code to pass
+  - if fail on beta, add more unit tests from scenario
+  - **always write code to fix tests**
+- simplicity
+  - just-in-time design (only what you need now, don't worry about future)
+  - no premature optimization
+- **refactoring**
+  - make code easier to read/use/modify
+  - improving the design of code; needed b/c of limited early design
+  - remove duplicated code - easier to change, understand
+  - change names to suggest what method does / how it's used
+    - method 1: rename method, fix compiler errors (takes a long time)
+    - method 2: copy method with new name, make old one call new one, slowly change references ( allows you to run tests)
+  - test suite needed for refactoring
+  - only refactor working code
+- CI: integrate work after each task, all unit test must run after integration (Travis does this)
+- **pair programming**
+  - one types, one monitors high-level issues (simplicity, integration, assumptions)
+  - reveals early design problems
+  - shuffle pairs periodically
+  - results in better code, reduces risk, improves focus, helps learning + spread of good habits
+  - programmers think they're too dumb or smart for it
+  - managers don't do it because of programmer resistance + thinking it's inefficient
+- **evaluation** at end of sprint
+  - run acceptance tests
+  - assess progress, discuss issues  (team and tech)
+  - compute team speed, re-estimate user stories
+  - plan w/ client for next iteration
+- **unique characteristics of XP**
+  - no analysts, architects, programmers, testers, integrators: every XP programmer does it all
+  - no complete up-front analysis an design, just brief period in beginning and continuous iteration throughout development
+  - develop infrastructure and frameworks with app, not up-front
+- **use XP for:**
+  - dynamic project in small teams
+  - project w/ requirements prone to change
+  - project w/ customer available
+- **not for:**
+  - requirements known and fixed
+  - cost of late changes is high
+  - customer not available
+- requirements defined incrementally, so there can be scope creep
+- design is on the fly, so there can be major redesigns
+- customer rep might stink, so there's a single point of failure
+- XP conclusions: incremental process for coping with change; never miss a deadline, just deliver less
+- **agile SW dev**
+  - from "Agile Manifesto" 2001
+  - scrum project management + XP engineering
+  - **team structure**
+    - cross functional team (devs, testers, product owner, scrum master)
+    - **product owner** (PO) drives product w/ business perspective; makes requirements, determines release date, leads iteration + release meetings; accepts / rejects work
+    - **scrum master** (SM) ensures team productive, enables cooperation, tracks progress
+  - team works to deliver user stories, keeps unfinished stories in backlog
+  - iteration time fixed (1-4 weeks), stories chosen by priority/size/team capacity
+  - stories -> collection of tasks, estimated in hours
+  - story is done when all tasks completed (dev, test, doc), all acceptance tests run, accepted by PO
+  - scrum has set of practices and predefined roles 
+  - sprints planned by taking stories from backlog, team decides how much they can do; during sprint, backlog is frozen
+  - daily 15 minute meetings happen to determine what's been done, what the plan for today is, what are the problems stopping goals
+  - scrum of scrums after the scrum; meet with clusters of teams
+  - **sprint meetings:** sprint planning, review, retrospective
+- conclusion: no silver bullet (adaptation necessary)
+
+
+
+## Lecture 4: An Introduction to Scrum
+
+- agile process that gets working software quickly, business sets priorities
+- people: Jeff Sutherland, Ken Schwaber, Mike Beedle, Mike Cohn
