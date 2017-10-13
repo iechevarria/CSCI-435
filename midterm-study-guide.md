@@ -411,3 +411,67 @@
   - **sprint backlog** individuals sign up for work, never assigned; estimated work remaining updated every day
   - **burndown chart** show remaining work on graph
 - scalability: team is 5-9 people, scale with teams of teams
+
+
+
+## Lecture 5: Requirements
+
+- requirements: descriptions of system services / constraints generated in engineering process - written for customers; should be high-level
+- hardest part of making software is choose what to make
+- requirements are about what the customer *needs*
+- user requirements should be understandable by people without technical knowledge, should be defined in natural language, tables, diagrams
+- need to determine stakeholders (people who benefit from system)
+- **interviewing**:
+  - can ask questions, listen to what they say/don't say
+  - ask them to teach you what they do, watch task
+  - in all interviews, get details - they can augment interview
+  - should have other ways of getting info, too
+- client writes user stories using their vocab; each story has acceptance tests
+- **strawmen:** sketch product for the user/client
+- **rapid prototyping:** major functionality superficially implemented, show to users
+  - pitfalls: needs to happen fast, can become product, can serve as spec
+  - if done well, very useful
+- **system specification:** structured document setting out detailed descriptions of system functions; defines what should be implemented; can be part of contract
+  - describes functionality completely
+  - ideally unambiguous, complete, consistent
+  - almost impossible goal
+- user requirements -> client managers, end-users, engineers, contractor managers, sys architects
+- sys requirements -> end-users, engineers, sys architects, SW devs
+- informal specs are in natural language, can be bad
+  - true formal specs time-consuming
+  - customers can read them
+- semi-formal specs use UML, more precision than natural language
+- **functional requirements:** services system should provide, how system should react to inputs, should behave in situations
+  - be specific in functional reqs
+- **non-functional:** constraints on services or functions like time constraints, dev process, standards
+  - programming language
+  - dev method
+  - I/O device capability
+  - categories:
+    - product requirements (speed, reliability)
+    - organizational requirements (process standards)
+    - external requirements (legal)
+- **domain requirements:** reqs that come from app domain of system
+  - example: Z39.50 standard user interface for database
+  - example: delete documents b/c copyright restrictions
+  - issues: understandability, implicitness
+- guidelines for requirements:
+  - use standard format for all requirements
+  - use shall or must for mandatory, should for desirable
+  - use emphasis on important bits
+  - don't use jargon
+- requirements and design are inseparable in practice
+- reqs official statement of what's needed from devs; not a design document, should be about WHAT not HOW
+- NL has drawbacks - ambiguity, not modular
+- alternatives:
+  - structured language spec: templates for requirements, can be done in a form
+  - tabular spec can be used to supplement NL, useful when there are alternatives
+  - sequence diagram: show sequence of events during user interaction, read top to bottom
+  - interface spec: talk about interfaces, basically
+- key points:
+  - user reqs are high-level statements about what system should do
+  - system specs communicate functions that system provides
+
+
+
+##Lecture 6: Use Cases
