@@ -475,3 +475,39 @@
 
 
 ##Lecture 6: Use Cases
+
+- **use cases:** text stories to record mostly functional requirements
+- **actor:** something with behavior (e.g. cashier); 3 types:
+  - primary actor (user goals fulfilled through services of system, drives use case)
+  - secondary actor (service to system) (e.g. payment authorization)
+  - offstage (has interest in use case, e.g. gov tax agency)
+- **scenario:** specific sequence of actions
+- format: brief 1 paragraph, casual, detail all steps, preconditions, success guarantees
+- essential style:
+  - UI absent
+  - focus on actor intent
+  - user intentions, system responsibilities; not concrete actions
+- focus on what, not how
+- take an actor, actor-goal perspective (focus on understanding what actor considers valuable result)
+- how to find use cases:
+  - find system boundaries
+  - find primary actors/goals
+  - define use cases that satisfy users' goals
+-  **rules of thumb for use cases:**
+  - boss test: would boss be happy about you spending all day on use case?
+  - elementary business process test: task performed by one person, one place, one time in response to business event; adds business value, leaves data in consistent state
+  - size test: too big, too small?
+- diagrams: 
+  - show boundary, what lies outside, how it gets used
+  - downplay programming
+  - focus on text
+- notation suggestions:
+  - primary actors on left
+  - supporting actors on right
+  - computer actors have alternative notation to human actors
+  - limit use cases to user-goal level use cases
+
+
+
+## Lecture 7: UML 
+
