@@ -393,3 +393,21 @@
 
 - agile process that gets working software quickly, business sets priorities
 - people: Jeff Sutherland, Ken Schwaber, Mike Beedle, Mike Cohn
+- constant duration sprint -> good rhythm 
+- no changes during sprint
+- scrum team does specs, design, code, test every sprint
+- roles:
+  - **product owner** defines features, decides release date, profitability, prioritizes features, accepts/rejects
+  - **scrummaster** enacts scrum practices, shields team from external interferences, is management
+  - **team** is self-organizing, membership changes only between sprints, is cross-functional, is full-time
+- ceremonies:
+  - **sprint planning** team selects items from backlog to complete, high level design is discusses, tasks identified, quantified
+  - **daily scrum** daily 15 minute meetings not for problem solving, scrum roles have input; 3 questions: what did you do yesterday? what will you do today? anything in your way?; about **commitments**, not status updates
+  - **sprint review** team talks about accomplishments, is a demo, 2-hour prep time rule, no slides, open to public, whole team talks
+  - **sprint retrospective** look at what's working, what's not; 15-30 minutes; after each sprint, whole team talks, customer may attend; many ways of doing retrospective
+- artifacts:
+  - **product backlog** is requirements, list of all work to do on project, prioritized by PO each sprint
+  - **sprint goal** statement of what work will be focused on during sprint
+  - **sprint backlog** individuals sign up for work, never assigned; estimated work remaining updated every day
+  - **burndown chart** show remaining work on graph
+- scalability: team is 5-9 people, scale with teams of teams
